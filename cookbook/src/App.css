@@ -1,5 +1,12 @@
 .App {
+  display: flex;
+  font-family: 'Annie Use Your Telescope', cursive;
   text-align: center;
+--lavender-blush: #fde8e9ff;
+--cameo-pink: #e3bac6ff;
+  background: lilac #bc9ec1ff;
+  text-decoration-color: #596475ff;
+--raisin-black: #1f2232ff;
 }
 
 .App-logo {
