@@ -5,13 +5,15 @@ const CreateRecipe = (props) => {
   const [recipe, setRecipe] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [description, setDescription] = useState('');
+  const [type, setType] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const fields = {
       recipe,
       ingredients,
-      description
+      description,
+      type,
     };
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/frylife`;
     // await axios.post(url, data, options (headers))
@@ -25,9 +27,9 @@ const CreateRecipe = (props) => {
     setRecipe('');
     setIngredients('');
     setDescription('');
+    setType('');
   }
 
-  // (label+input)*3 with emmet
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="recipe">Recipe:</label>
@@ -50,6 +52,12 @@ const CreateRecipe = (props) => {
         type="description"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
+      />
+            <input
+        name="type"
+        type="type"
+        value={type}
+        onChange={(event) => setType(event.target.value)}
       />
       <button type="submit"></button>
     </form>

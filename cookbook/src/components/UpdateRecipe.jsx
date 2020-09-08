@@ -49,7 +49,7 @@ const UpdateRecipe = (props) => {
         value={description}
         onChange={(event) => setDescription(event.target.value)}
       />
-      <button type="submit"></button>
+      <button type="submit">Submit</button>
     </form>
   )
 }
