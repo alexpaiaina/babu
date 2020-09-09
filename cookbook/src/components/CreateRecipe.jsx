@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const CreateRecipe = (props) => {
-  const [recipe, setRecipe] = useState('');
-  const [ingredients, setIngredients] = useState('');
-  const [description, setDescription] = useState('');
-  const [type, setType] = useState('');
+  const [recipe, setRecipe] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [description, setDescription] = useState("");
+  const [type, setType] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,20 +15,24 @@ const CreateRecipe = (props) => {
       description,
       type,
     };
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/frylife`;
+    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/cookbook`;
     // await axios.post(url, data, options (headers))
-    await axios.post(airtableURL, { fields }, {
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        'Content-Type': 'application/json',
+    await axios.post(
+      airtableURL,
+      { fields },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          "Content-Type": "application/json",
+        },
       }
-    });
+    );
     props.setFetchRecipe(!props.fetchRecipe);
-    setRecipe('');
-    setIngredients('');
-    setDescription('');
-    setType('');
-  }
+    setRecipe("");
+    setIngredients("");
+    setDescription("");
+    setType("");
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -53,7 +57,7 @@ const CreateRecipe = (props) => {
         value={description}
         onChange={(event) => setDescription(event.target.value)}
       />
-            <input
+      <input
         name="type"
         type="type"
         value={type}
@@ -61,6 +65,6 @@ const CreateRecipe = (props) => {
       />
       <button type="submit"></button>
     </form>
-  )
-}
+  );
+};
 export default CreateRecipe;

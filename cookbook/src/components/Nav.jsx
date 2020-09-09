@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const navStyle = {
+    color: 'white'
+  }
   return (
     <nav>
       <ul className="nav-bar">
-        <Link to="/about">
+        <Link style={navStyle} to="/about">
           <li>About</li>
         </Link>
-        <Link to="/Contact">
+        <Link style={navStyle} to="/contact">
           <li >Contact</li>
         </Link>
       </ul>

@@ -17,6 +17,18 @@ nav{
 
 }
 
+.title{
+  color: purple;
+  margin: 1vh 0;
+}
+
+.description{
+  margin: 3vh 1vh;
+}
+
+.pic{
+  width: 40vw;
+}
 .top-1{
   display: flex;
 

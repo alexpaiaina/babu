@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Route, Switch } from "react-router-dom";
-import CreateRecipe from "./components/CreateRecipe";
-import Recipe from "./components/Recipe";
+// import CreateRecipe from "./components/CreateRecipe";
+import Recipes from "./components/Recipes";
 import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import UpdateRecipe from "./components/UpdateRecipe";
+// import UpdateRecipe from "./components/UpdateRecipe";
 import "./App.css";
 
 function App() {
-  const [recipe, setRecipe] = useState([]);
-  const [fetchRecipe, setFetchRecipe] = useState(false);
+  const [recipes, setRecipes] = useState([]);
+  // const [fetchRecipe, setFetchRecipe] = useState(false);
+  const speeds = ["quick", "casual", "group"];
 
   useEffect(() => {
     const getRecipe = async () => {
@@ -24,31 +25,33 @@ function App() {
         },
       });
       console.log(response);
-      setRecipe(response.data.records.recipe);
+      setRecipes(response.data.records);
     };
     getRecipe();
   }, []);
 
   return (
-    <>
+    <div>
       <Switch>
+        <>
         <div className="App">
-          <Nav />
+        <Nav />
           <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <Route key="about" path="/about" component={About} />
+          <Route key="contact" path="/contact" component={Contact} />
         </div>
         <Route>
           <Header />
+        </Route> 
+        {/* <div className="menu-book"> */}
+        <Route key="home" path="/" exact>
+          {/* <Home speeds={speeds} recipes={recipes}/> */}
         </Route>
-        <div className="menu-book">
-          <Route>
-            {recipe.map((recipe) => (
-              <Recipe recipe={recipe} key={recipe.id} />
-            ))}
-          </Route>
-        </div>
-        <Route path="/create">
+        <Route key="recipes" path="/recipes">
+          <Recipes recipes={recipes} />
+        </Route>
+        {/* </div> */}
+        {/* <Route path="/create">
           <CreateRecipe
             fetchRecipe={fetchRecipe}
             setFetchRecipe={setFetchRecipe}
@@ -56,9 +59,10 @@ function App() {
         </Route>
         <Route path="/update">
           <UpdateRecipe />
-        </Route>
+        </Route> */}
+        </>
       </Switch>
-    </>
+    </div>
   );
 }
 

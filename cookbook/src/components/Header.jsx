@@ -6,7 +6,7 @@ const Header = () => {
       <h1 className="top-1">
         <span className="material-icons refridge">kitchen</span> Babu's Cookbook
       </h1>
-      <div class="input-group">
+      {/* <div class="input-group">
         <input
           type="text"
           class="form-control"
@@ -40,7 +40,7 @@ const Header = () => {
           </div>
         </input>
         <button className="topbutt">Search Recipe</button>
-      </div>
+      </div> */}
     </div>
   );
 };

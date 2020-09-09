@@ -1,27 +1,34 @@
 import React from "react";
-import axios from "axios";
 
-const Recipe = (props) => {
-  const { recipe, ingredient, description } = props.recipe.fields;
-  const { fetchRecipe, setFetchRecipe } = props;
-
-  const cookbook = async () => {
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/cookbook/${recipe.id}`;
-    await axios.get(airtableURL, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-      },
-    });
-    setFetchRecipe(fetchRecipe);
-  };
+const Recipes = (props) => {
+  // const { recipe, ingredient, description } = props.recipe.fields;
+  // const { fetchRecipe, setFetchRecipe } = props;
+  console.log(props.recipes);
+  // const cookbook = async () => {
+  //   const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/cookbook/${recipes.id}`;
+  //   await axios.get(airtableURL, {
+  //     headers: {
+  //       Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+  //     },
+  //   });
+  //   setFetchRecipe(fetchRecipe);
+  // };
 
   return (
     <div>
-      <h4> {recipe} </h4>
-      <h5> {ingredient} </h5>
-      <p> {description} </p>
-      <button onClick={cookbook}></button>
-      <div
+      {props.recipes.map((recipe) => (
+        <>
+          <div className={"recipe"}>{recipe.fields.recipe}</div>
+          <div className={"ingredients"}>{recipe.fields.ingredients}</div>
+          <div className={"desciption"}>{recipe.fields.description}</div>
+          <img className={"pic"} src={recipe.fields.pic[0].url} alt="cookbook"/>
+        </>
+      ))}
+      {/* <h4> recipe </h4> */}
+      {/* <h5> {'ingredient'} </h5>
+      <p> {'description'} </p> */}
+      {/* <button onClick={cookbook}></button> */}
+      {/* <div
         id="carouselExampleCaptions"
         class="carousel slide"
         data-ride="carousel"
@@ -78,8 +85,8 @@ const Recipe = (props) => {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };
-export default Recipe;
+export default Recipes;
