@@ -43,3 +43,21 @@ nav{
 .refridge{
   font-size: 100px;
 }
+
+.casual-pic {
+  display: flex;
+  justify-content: center;
+  width: 33.3vw;
+}
+
+.quick-pic {
+  display: flex;
+  justify-content: center;
+  width: 33.3vw;
+}
+
+.group-pic {
+  display: flex;
+  justify-content: center;
+  width: 33.3vw;
+}

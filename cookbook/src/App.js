@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Route, Switch } from "react-router-dom";
 // import CreateRecipe from "./components/CreateRecipe";
 import Recipes from "./components/Recipes";
@@ -16,19 +16,19 @@ function App() {
   // const [fetchRecipe, setFetchRecipe] = useState(false);
   const speeds = ["quick", "casual", "group"];
 
-  // useEffect(() => {
-  //   const getRecipe = async () => {
-  //     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/cookbook?Grid%20view`;
-  //     const response = await axios.get(airtableURL, {
-  //       headers: {
-  //         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-  //       },
-  //     });
-  //     console.log(response);
-  //     setRecipes(response.data.records);
-  //   };
-  //   getRecipe();
-  // }, []);
+  useEffect(() => {
+    const getRecipe = async () => {
+      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/cookbook?Grid%20view`;
+      const response = await axios.get(airtableURL, {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      });
+      console.log(response);
+      setRecipes(response.data.records);
+    };
+    getRecipe();
+  }, []);
 
   return (
     <div>
