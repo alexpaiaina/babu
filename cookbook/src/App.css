@@ -1,3 +1,7 @@
+body{
+  font-family: 'Annie Use Your Telescope', cursive;
+  padding: 20px
+}
 nav{
   display: flex;
   justify-content: space-around;
@@ -19,6 +23,7 @@ nav{
 Header{
   font-family: 'Annie Use Your Telescope', cursive;
   font-size: 5vh;
+  text-align: center;
   justify-content: center;
 }
 
@@ -49,6 +54,14 @@ Header{
   font-size: 100px;
 }
 
+.aboutInfo {
+  text-align: center;
+}
+
+.aboutPara{
+  display: flex;
+
+}
 
 .casual-pic {
   display: flex;

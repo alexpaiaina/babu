@@ -7,8 +7,9 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Casual from "./components/Casual";
 import Group from "./components/Group";
-import Home from "./components/Home";
+// import Pics from "./components/Pics";
 import Quick from "./components/Quick";
+import Home from "./components/Home";
 import UpdateRecipe from "./components/UpdateRecipe";
 import "./App.css";
 
@@ -36,17 +37,30 @@ function App() {
       <>
         <Switch>
           <div className="App">
-            <nav>
-              <Link to="/about">About
+            <nav className="cherry">
+              <Link to="/about">
+                About
                 <About />
               </Link>
 
-              <Link to="/contact">Contact
+              <Link to="/" exact path="/">
+                Home
+                <Home />
+                </Link>
+
+              <Link to="/contact">
+                Contact
                 <Contact />
               </Link>
             </nav>
 
             <header>Babu's Kitchen Cookbook</header>
+          </div>
+
+          <div>
+          <Route path="/about">
+            <About/>
+          </Route>
           </div>
 
           <div className="home-pic">
