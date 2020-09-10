@@ -1,17 +1,18 @@
-body{
-  font-family: 'Annie Use Your Telescope', cursive;
-  padding: 20px
+body {
+  font-family: "Annie Use Your Telescope", cursive;
+  padding: 20px;
 }
-nav{
+nav {
   display: flex;
   justify-content: space-around;
   align-items: right;
   min-height: 10vh;
   background: lilac #bc9ec1ff;
   color: white;
+  margin: 0 0 -35px 0;
 }
 
-.nav-bar{
+.nav-bar {
   width: 40%;
   display: flex;
   justify-content: space-around;
@@ -20,28 +21,27 @@ nav{
   padding: 20px;
 }
 
-Header{
-  font-family: 'Annie Use Your Telescope', cursive;
+Header {
+  font-family: "Annie Use Your Telescope", cursive;
   font-size: 5vh;
   text-align: center;
   justify-content: center;
 }
 
-.title{
+.title {
   color: purple;
   margin: 1vh 0;
 }
 
-.description{
+.description {
   margin: 3vh 1vh;
 }
 
-.pic{
+.pic {
   width: 40vw;
 }
-.top-1{
+.top-1 {
   display: flex;
-
 }
 
 .billboard {
@@ -50,7 +50,7 @@ Header{
   text-align: center;
 }
 
-.refridge{
+.refridge {
   font-size: 100px;
 }
 
@@ -58,9 +58,8 @@ Header{
   text-align: center;
 }
 
-.aboutPara{
+.aboutPara {
   display: flex;
-
 }
 
 .casual-pic {
@@ -68,7 +67,7 @@ Header{
   justify-content: center;
   width: 60vw;
   padding: 20px;
-  margin: 50px 0 0 120px;
+  margin: 5px 0 0 120px;
 }
 
 .quick-pic {
@@ -76,7 +75,7 @@ Header{
   justify-content: center;
   width: 60vw;
   padding: 20px;
-  margin: 50px 0 0 120px;
+  margin: 5px 0 0 120px;
 }
 
 .group-pic {
@@ -84,5 +83,5 @@ Header{
   justify-content: center;
   width: 60vw;
   padding: 20px;
-  margin: 50px 0 0 120px;
-}
+  margin: 0px 0 0 120px;
+} 

@@ -8,7 +8,6 @@ import Contact from "./components/Contact";
 // import AddTripButton from "./components/Buttons";
 // import Casual from "./components/Casual";
 // import Group from "./components/Group";
-// import Pics from "./components/Pics";
 // import Quick from "./components/Quick";
 import Home from "./components/Home";
 // import UpdateRecipe from "./components/UpdateRecipe";
@@ -71,39 +70,6 @@ function App() {
             </Route>
           </div>
 
-          {/* <div className="home-pic">
-            <Route path="/recipes/group">
-              <Group />
-              <img
-                className="group-pic"
-                src="https://dl.airtable.com/.attachments/48921d7aac20d6892987340c94e5447c/f4fc7b84/IMG_2115.JPG"
-                alt="cookbook"
-              />
-            </Route>
-          </div> */}
-
-          {/* <div>
-            <Route path="/recipes/quick">
-              <Quick />
-              <img
-                className="quick-pic"
-                src="https://dl.airtable.com/.attachments/f7f18f3d20253dc508733cde350639b3/2c8f9994/IMG_2118.JPG"
-                alt="cookbook"
-              />
-            </Route>
-          </div>
-
-          <div>
-            <Route path="/recipes/casual">
-              <Casual />
-              <img
-                className="casual-pic"
-                src="https://dl.airtable.com/.attachments/ce4bfd90ee712211f7637516c837373d/004b57ec/IMG_2124.JPG"
-                alt="cookbook"
-              />
-            </Route>
-          </div>
-
            <div>
             <Route exact path="/">
               <Link to="/">
@@ -112,7 +78,7 @@ function App() {
             </Route>
           </div> 
 
-          <div className="menu-book">
+          {/* <div className="menu-book">
             <Route key="home" exact path="/">
               <Pics speeds={speeds} recipes={recipes} />
             </Route>
@@ -137,7 +103,7 @@ function App() {
             <Route path="/updaterecipe">
               <UpdateRecipe />
             </Route>
-          </div>  */}
+          </div>   */}
         {/* </Switch> */}
       </>
     </div>
