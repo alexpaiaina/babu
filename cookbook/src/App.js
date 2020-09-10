@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Route, Link, Switch } from "react-router-dom";
-import CreateRecipe from "./components/CreateRecipe";
-import Recipes from "./components/Recipes";
+import { Route, Link } from "react-router-dom";
+// import CreateRecipe from "./components/CreateRecipe";
+// import Recipes from "./components/Recipes";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Casual from "./components/Casual";
-import Group from "./components/Group";
+// import AddTripButton from "./components/Buttons";
+// import Casual from "./components/Casual";
+// import Group from "./components/Group";
 // import Pics from "./components/Pics";
-import Quick from "./components/Quick";
+// import Quick from "./components/Quick";
 import Home from "./components/Home";
-import UpdateRecipe from "./components/UpdateRecipe";
+// import UpdateRecipe from "./components/UpdateRecipe";
 import "./App.css";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [fetchRecipe, setFetchRecipe] = useState(false);
+  // const [fetchRecipe, setFetchRecipe] = useState(false);
   // const speeds = ["quick", "casual", "group"];
 
   useEffect(() => {
@@ -35,22 +36,17 @@ function App() {
   return (
     <div>
       <>
-        <Switch>
+        {/* <Switch> */}
           <div className="App">
             <nav className="cherry">
-              <Link to="/about">
-                About
-                <About />
-              </Link>
+              <Link to="/about">About</Link>
 
-              <Link to="/" exact path="/">
+              <Link to="/">
                 Home
-                <Home />
-                </Link>
+              </Link>
 
               <Link to="/contact">
                 Contact
-                <Contact />
               </Link>
             </nav>
 
@@ -58,12 +54,24 @@ function App() {
           </div>
 
           <div>
-          <Route path="/about">
-            <About/>
-          </Route>
+            <Route path="/about">
+              <About />
+            </Route>
           </div>
 
-          <div className="home-pic">
+          <div>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </div>
+
+          <div>
+            <Route path="/contact">
+              <Contact/>
+            </Route>
+          </div>
+
+          {/* <div className="home-pic">
             <Route path="/recipes/group">
               <Group />
               <img
@@ -72,9 +80,9 @@ function App() {
                 alt="cookbook"
               />
             </Route>
-          </div>
+          </div> */}
 
-          <div>
+          {/* <div>
             <Route path="/recipes/quick">
               <Quick />
               <img
@@ -96,18 +104,19 @@ function App() {
             </Route>
           </div>
 
-          <div>
+           <div>
             <Route exact path="/">
               <Link to="/">
                 <Home />
               </Link>
             </Route>
-          </div>
-          {/* <div className="menu-book">
+          </div> 
+
+          <div className="menu-book">
             <Route key="home" exact path="/">
-              <Home speeds={speeds} recipes={recipes} />
+              <Pics speeds={speeds} recipes={recipes} />
             </Route>
-            <div> */}
+            <div> 
 
           <div>
             <Route key="recipes" path="/recipes">
@@ -128,8 +137,8 @@ function App() {
             <Route path="/updaterecipe">
               <UpdateRecipe />
             </Route>
-          </div>
-        </Switch>
+          </div>  */}
+        {/* </Switch> */}
       </>
     </div>
   );

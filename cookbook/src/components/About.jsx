@@ -1,8 +1,11 @@
 import React from "react";
 
 const About = () => {
+
   return (
+
     <div className="aboutNav">
+      
       <h1 className="aboutInfo">Babu</h1>
       <p className="aboutPara">
         Babu is a shortened nickname for Grandma in Russian, Babushka. She is a
