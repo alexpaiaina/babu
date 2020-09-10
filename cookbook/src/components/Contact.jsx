@@ -3,20 +3,20 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="contactNav">
-      <h2>Babu's Contact Information</h2>
+      <h1>Babu's Contact Information</h1>
       <br />
       <br />
-      <h5>Email: babu@gmail.com</h5>
+      <h4>Email: babu@gmail.com</h4>
       <br />
       <br />
-      <h5>
+      <h4>
         Phone:
         <br />
-        (808)586-7873
-      </h5>
+        (808)596-7873
+      </h4>
       <br />
       <br />
-      <h5>
+      <h4>
         Address:
         <br />
         223 Chippawa City
@@ -24,7 +24,7 @@ const Contact = () => {
         Ocean Beach,
         <br />
         California 94543
-      </h5>
+      </h4>
     </div>
   );
 };

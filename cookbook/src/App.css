@@ -10,6 +10,7 @@ nav {
   background: lilac #bc9ec1ff;
   color: white;
   margin: 0 0 -35px 0;
+  cursor: pointer;
 }
 
 .nav-bar {
@@ -44,6 +45,11 @@ Header {
   display: flex;
 }
 
+.contactNav{
+  margin:50px;
+  font-weight: bold;
+}
+
 .billboard {
   background-color: lilac #bc9ec1ff;
   color: #fff;
@@ -64,24 +70,45 @@ Header {
 
 .casual-pic {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   width: 60vw;
-  padding: 20px;
-  margin: 5px 0 0 120px;
+  padding: 10px;
+  margin: 0 0 0 120px;
 }
 
 .quick-pic {
   display: flex;
   justify-content: center;
   width: 60vw;
-  padding: 20px;
-  margin: 5px 0 0 120px;
+  padding: 5px;
+  margin: 0 0 0 120px;
 }
 
 .group-pic {
   display: flex;
   justify-content: center;
   width: 60vw;
-  padding: 20px;
-  margin: 0px 0 0 120px;
+  padding: 10px;
+  margin: 0 0 0 120px;
 } 
+
+.aboutPara {
+  text-indent: 5%;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.recipeHead {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.splitpics{
+  display:flex;
+  justify-items: center;
+  width: 100vw;
+  padding: 20px;
+  font-weight: bold;
+
+}

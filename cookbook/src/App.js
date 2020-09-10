@@ -5,10 +5,9 @@ import { Route, Link } from "react-router-dom";
 // import Recipes from "./components/Recipes";
 import About from "./components/About";
 import Contact from "./components/Contact";
-// import AddTripButton from "./components/Buttons";
-// import Casual from "./components/Casual";
-// import Group from "./components/Group";
-// import Quick from "./components/Quick";
+import Casual from "./components/Casual";
+import Group from "./components/Group";
+import Quick from "./components/Quick";
 import Home from "./components/Home";
 // import UpdateRecipe from "./components/UpdateRecipe";
 import "./App.css";
@@ -16,7 +15,7 @@ import "./App.css";
 function App() {
   const [recipes, setRecipes] = useState([]);
   // const [fetchRecipe, setFetchRecipe] = useState(false);
-  // const speeds = ["quick", "casual", "group"];
+  const speeds = ["quick", "casual", "group"];
 
   useEffect(() => {
     const getRecipe = async () => {
@@ -31,11 +30,9 @@ function App() {
     };
     getRecipe();
   }, []);
-
   return (
     <div>
       <>
-        {/* <Switch> */}
           <div className="App">
             <nav className="cherry">
               <Link to="/about">About</Link>
@@ -49,7 +46,6 @@ function App() {
               </Link>
             </nav>
 
-            <header>Babu's Kitchen Cookbook</header>
           </div>
 
           <div>
@@ -78,13 +74,27 @@ function App() {
             </Route>
           </div> 
 
-          {/* <div className="menu-book">
-            <Route key="home" exact path="/">
-              <Pics speeds={speeds} recipes={recipes} />
+           <div className="menu-book">
+            <Route exact path="/recipes/quick">
+              <Quick speeds={speeds} recipes={recipes} />
             </Route>
-            <div> 
+          </div>  
+            
 
-          <div>
+           <div className="menu-book">
+            <Route key="casual" exact path="/recipes/casual">
+              <Casual speeds={speeds} recipes={recipes} />
+            </Route>
+              </div> 
+                
+
+           <div className="menu-book">
+            <Route key="group" exact path="/recipes/group">
+              <Group speeds={speeds} recipes={recipes} />
+            </Route>
+            </div>  
+
+          {/* <div>
             <Route key="recipes" path="/recipes">
               <Recipes recipes={recipes} />
             </Route>
@@ -103,8 +113,8 @@ function App() {
             <Route path="/updaterecipe">
               <UpdateRecipe />
             </Route>
-          </div>   */}
-        {/* </Switch> */}
+          </div>     */}
+    
       </>
     </div>
   );
