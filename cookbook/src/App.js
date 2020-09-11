@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 import CreateRecipe from "./components/CreateRecipe";
+// import Delete from "./components/Delete"
 // import Recipes from "./components/Recipes";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -103,7 +104,20 @@ function App() {
 
         {/* <div>
             <Route path="/updaterecipe">
-              <UpdateRecipe />
+            <UpdateRecipe
+              setFetchRecipe={setFetchRecipe}
+              fetchRecipe={fetchRecipe}
+              />
+            </Route>
+        </div>    */}
+        
+
+        {/* <div>
+            <Route path="/deleterecipe">
+            <Delete
+              setFetchRecipe={setFetchRecipe}
+              fetchRecipe={fetchRecipe}
+              />
             </Route>
           </div>     */}
       </>

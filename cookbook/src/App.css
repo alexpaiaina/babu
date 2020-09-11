@@ -24,6 +24,7 @@ nav {
 }
 
 Header {
+  display:flex;
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 5vh;
   text-align: center;
@@ -69,7 +70,7 @@ Header {
   font-size: 18px;
 }
 
-.casual-pic {
+.home-pic{
   display: flex;
   justify-content: right;
   width: 60vw;
@@ -77,21 +78,9 @@ Header {
   margin: 0 0 0 120px;
 }
 
-.quick-pic {
-  display: flex;
-  justify-content: center;
-  width: 60vw;
-  padding: 5px;
-  margin: 0 0 0 120px;
+.categoriesHome{
+  font-size: 30px;
 }
-
-.group-pic {
-  display: flex;
-  justify-content: center;
-  width: 60vw;
-  padding: 5px;
-  margin: 0 0 0 120px;
-} 
 
 .aboutPara {
   text-indent: 5%;
@@ -110,7 +99,7 @@ Header {
   display:flex;
   justify-items: center;
   width: 100vw;
-  padding: 20px;
+  padding: px;
   font-weight: bold;
 }
 
@@ -125,5 +114,137 @@ Header {
 }
 
 .titleName {
+  margin: 20px 0 -10px 0;
   text-decoration: underline;
+  font-size: 24px;
+}
+
+.recipeboxes{
+  text-align: center;
+}
+
+@media only screen and (min-width: 760px) {
+
+.recipeboxes{
+  font-size: 23px;
+}
+
+Nav {
+  font-size: 28px;
+}
+
+Header {
+  margin: 15px;
+  font-size: 50px;
+}
+
+.recipeHead {
+  margin: 20px, 0 0 0;
+  font-size: 60px;
+}
+
+.aboutInfo{
+  margin: 25px 0 0 0;
+  font-size: 60px;
+}
+.aboutPara{
+  margin: 25px 0 0 0;
+  font-size: 29px;
+}
+
+.contactHead {
+  font-size: 50px;
+}
+
+.contactInfo {
+  font-size: 40px;
+}
+
+.titleName {
+  font-size:40px
+}
+.picIndy {
+ font-size: 40px
+}
+
+.home-pic{
+  display: flex;
+  justify-content: right;
+  width: 40vw;
+  padding: 5px;
+  margin: 0 0 0 285px;
+}
+
+.categoriesHome{
+  font-size: 30px;
+}
+
+
+}
+
+@media only screen and (min-width: 1300px) {
+.recipeboxes{
+  font-size: 40px;
+}
+
+Nav {
+  font-size: 40px;
+}
+
+Header {
+  margin: 40px;
+  font-size: 70px;
+}
+
+.recipeHead {
+  font-size: 80px;
+}
+.recipeText {
+  font-size: 55px;
+}
+.aboutInfo{
+  margin: 50px 0 0 0;
+  font-size: 75px;
+}
+.aboutPara{
+  margin: 25px 0 0 0;
+  font-size: 30px;
+}
+
+.contactHead {
+  font-size: 65px;
+  
+}
+
+.contactInfo {
+  font-size: 50px;
+}
+
+.titleName {
+  font-size:60px
+}
+
+.picIndy {
+  font-size: 40px;
+}
+
+.splitpics{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0 auto;
+  width: 70vh;
+}
+
+.home-pic{
+  display: flex;
+  justify-content: right;
+  width: 80vw;
+  padding: 5px;
+  margin: 0 0 0 180px;
+}
+
+.categoriesHome{
+  font-size: 50px;
+}
 }

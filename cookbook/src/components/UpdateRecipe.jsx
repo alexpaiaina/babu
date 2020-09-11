@@ -2,25 +2,16 @@
 // import axios from "axios";
 
 // const UpdateRecipe = (props) => {
-//   const [recipe, setRecipe] = useState(props);
-//   const [ingredients, setIngredients] = useState(props);
-//   const [description, setDescription] = useState(props);
-//   const [type, setType] = useState(props);
+//   const [recipe, setRecipe] = useState("");
+//   const [ingredients, setIngredients] = useState("");
+//   const [description, setDescription] = useState("");
+//   const [type, setType] = useState("");
 
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     const fields = {
-//       recipe,
-//       ingredients,
-//       description,
-//       type,
-//     };
-
+//   const updateRecipe = async (fields) => {
 //     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/cook/${props.recipe.id}`;
-//     // await axios.put(url, data, options (headers))
 //     await axios.put(
 //       airtableURL,
-//       { fields },
+//       { fields: fields },
 //       {
 //         headers: {
 //           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
@@ -28,42 +19,58 @@
 //         },
 //       }
 //     );
-
-//     props.setFetchReviews(!props.fetchReviews);
 //   };
+  
+//     const handleSubmit = async (e) => {
+//       e.preventDefault();
+//       const fields = {
+//         recipe : recipe,
+//         ingredients : ingredients,
+//         description : description,
+//         type : type,
+//       };
+//       updateRecipe(fields);
+//       props.setFetchReviews(!props.fetchReviews);
+//     };
 
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label htmlFor="recipe">Title:</label>
-//       <input
-//         name="recipe"
-//         type="recipe"
-//         value={recipe}
-//         onChange={(event) => setRecipe(event.target.value)}
-//       />
-//       <label htmlFor="ingredients">ingredients:</label>
-//       <ingredientsarea
-//         name="ingredients"
-//         type="ingredients"
-//         value={ingredients}
-//         onChange={(event) => setIngredients(event.target.value)}
-//       />
-//       <label htmlFor="description">description:</label>
-//       <input
-//         name="description"
-//         type="description"
-//         value={description}
-//         onChange={(event) => setDescription(event.target.value)}
-//       />
-//       <input
-//         name="type"
-//         type="type"
-//         value={type}
-//         onChange={(event) => setType(event.target.value)}
-//       />
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// };
-
+//     return (
+//       <div className="App" className="recipeboxes">
+//         <form onSubmit={(e) => handleSubmit(e)}>
+//           <label htmlFor="recipe"></label>
+//           <input
+//             placeholder="recipe"
+//             name="recipe"
+//             type="recipe"
+//             value={recipe}
+//             onChange={(e) => setRecipe(e.target.value)}
+//           />
+//           <label htmlFor="ingredients"></label>
+//           <input
+//             placeholder="ingredients"
+//             name="ingredients"
+//             type="ingredients"
+//             value={ingredients}
+//             onChange={(e) => setIngredients(e.target.value)}
+//           />
+//           <label htmlFor="description"></label>
+//           <input
+//             placeholder="description"
+//             name="description"
+//             type="description"
+//             value={description}
+//             onChange={(e) => setDescription(e.target.value)}
+//           />
+//           <label htmlFor="type"></label>
+//           <input
+//             placeholder="type"
+//             name="type"
+//             type="type"
+//             value={type}
+//             onChange={(e) => setType(e.target.value)}
+//           />
+//           <input type="submit" value="update"/>
+//         </form>
+//       </div>
+//     );
+//   };
 // export default UpdateRecipe;

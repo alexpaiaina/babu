@@ -1,6 +1,8 @@
 import React from "react";
 import CreateRecipe from "./CreateRecipe";
 import { Link } from "react-router-dom"
+// import UpdateRecipe from "./UpdateRecipe"
+// import Delete from "./Delete"
 
 const Group = (props) => {
   const filteredRecipes = props.recipes.filter((recipe) => {
@@ -11,15 +13,12 @@ const Group = (props) => {
     <div>
       <h1 className="recipeHead">Group Recipes</h1>
       <Link to="/recipes/group"></Link>
-      <CreateRecipe />
       {filteredRecipes &&
         filteredRecipes.map((recipe) => (
           <div className="recipeText">
             <div className="titleName">{recipe.fields.recipe}</div>
-            <br/>
-            <div>Ingredients : {recipe.fields.ingredients}</div>
-            <br/>
-            <div>{recipe.fields.description}</div>
+            <div className="picIndy">Ingredients : {recipe.fields.ingredients}</div>
+            <div className="picIndy">{recipe.fields.description}</div>
             <div>
               {
                 <img
@@ -31,6 +30,9 @@ const Group = (props) => {
             </div>
           </div>
         ))}
+      <CreateRecipe />
+      {/* <UpdateRecipe /> */}
+      {/* <Delete /> */}
     </div>
   );
 };
