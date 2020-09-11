@@ -11,6 +11,7 @@ nav {
   color: white;
   margin: 0 0 -35px 0;
   cursor: pointer;
+  font-size: 22px;
 }
 
 .nav-bar {
@@ -29,10 +30,7 @@ Header {
   justify-content: center;
 }
 
-.title {
-  color: purple;
-  margin: 1vh 0;
-}
+
 
 .description {
   margin: 3vh 1vh;
@@ -48,6 +46,8 @@ Header {
 .contactNav{
   margin:50px;
   font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 
 .billboard {
@@ -66,13 +66,14 @@ Header {
 
 .aboutPara {
   display: flex;
+  font-size: 18px;
 }
 
 .casual-pic {
   display: flex;
   justify-content: right;
   width: 60vw;
-  padding: 10px;
+  padding: 5px;
   margin: 0 0 0 120px;
 }
 
@@ -88,7 +89,7 @@ Header {
   display: flex;
   justify-content: center;
   width: 60vw;
-  padding: 10px;
+  padding: 5px;
   margin: 0 0 0 120px;
 } 
 
@@ -102,6 +103,7 @@ Header {
   text-align: center;
   font-weight: bold;
   padding: 10px;
+  margin: 0 0 20px 0;
 }
 
 .splitpics{
@@ -110,5 +112,18 @@ Header {
   width: 100vw;
   padding: 20px;
   font-weight: bold;
+}
 
+.recipeText{
+  font-size: 22px;
+  text-align: center;
+  
+}
+
+.contactHead {
+  text-align: center;
+}
+
+.titleName {
+  text-decoration: underline;
 }

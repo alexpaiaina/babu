@@ -3,7 +3,7 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="contactNav">
-      <h1>Babu's Contact Information</h1>
+      <h1 className="contactHead">Babu's Contact Information</h1>
       <br />
       <br />
       <h4>Email: babu@gmail.com</h4>

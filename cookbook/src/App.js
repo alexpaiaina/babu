@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
-// import CreateRecipe from "./components/CreateRecipe";
+import CreateRecipe from "./components/CreateRecipe";
 // import Recipes from "./components/Recipes";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -14,7 +14,7 @@ import "./App.css";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  // const [fetchRecipe, setFetchRecipe] = useState(false);
+  const [fetchRecipe, setFetchRecipe] = useState(false);
   const speeds = ["quick", "casual", "group"];
 
   useEffect(() => {
@@ -29,92 +29,83 @@ function App() {
       setRecipes(response.data.records);
     };
     getRecipe();
-  }, []);
+  }, [fetchRecipe]);
   return (
     <div>
       <>
-          <div className="App">
-            <nav className="cherry">
-              <Link to="/about">About</Link>
+        <div className="App">
+          <nav className="cherry">
+            <Link className="top" to="/about">
+              About
+            </Link>
 
-              <Link to="/">
-                Home
-              </Link>
+            <Link className="top" to="/">
+              Home
+            </Link>
 
-              <Link to="/contact">
-                Contact
-              </Link>
-            </nav>
+            <Link className="top" to="/contact">
+              Contact
+            </Link>
+          </nav>
+        </div>
 
-          </div>
+        <div>
+          <Route path="/about">
+            <About />
+          </Route>
+        </div>
 
-          <div>
-            <Route path="/about">
-              <About />
-            </Route>
-          </div>
+        <div>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </div>
 
-          <div>
-            <Route exact path="/">
+        <div>
+          <Route exact path="/">
+            <Link to="/">
               <Home />
-            </Route>
-          </div>
+            </Link>
+          </Route>
+        </div>
 
+        <div className="menu-book">
+          <Route exact path="/recipes/quick">
+            <Quick speeds={speeds} recipes={recipes} />
+          </Route>
+        </div>
+
+        <div className="menu-book">
+          <Route key="casual" exact path="/recipes/casual">
+            <Casual speeds={speeds} recipes={recipes} />
+          </Route>
+        </div>
+
+        <div className="menu-book">
+          <Route key="group" exact path="/recipes/group">
+            <Group speeds={speeds} recipes={recipes} />
+          </Route>
+        </div>
+        {/* 
           <div>
-            <Route path="/contact">
-              <Contact/>
-            </Route>
-          </div>
-
-           <div>
-            <Route exact path="/">
-              <Link to="/">
-                <Home />
-              </Link>
-            </Route>
-          </div> 
-
-           <div className="menu-book">
-            <Route exact path="/recipes/quick">
-              <Quick speeds={speeds} recipes={recipes} />
-            </Route>
-          </div>  
-            
-
-           <div className="menu-book">
-            <Route key="casual" exact path="/recipes/casual">
-              <Casual speeds={speeds} recipes={recipes} />
-            </Route>
-              </div> 
-                
-
-           <div className="menu-book">
-            <Route key="group" exact path="/recipes/group">
-              <Group speeds={speeds} recipes={recipes} />
-            </Route>
-            </div>  
-
-          {/* <div>
             <Route key="recipes" path="/recipes">
               <Recipes recipes={recipes} />
             </Route>
-          </div>
+          </div> */}
 
-          <div>
-            <Route path="/create">
-              <CreateRecipe
-                fetchRecipe={fetchRecipe}
-                setFetchRecipe={setFetchRecipe}
-              />
-            </Route>
-          </div>
+        <div>
+          <Route path="/createrecipe">
+            <CreateRecipe
+              setFetchRecipe={setFetchRecipe}
+            />
+          </Route>
+        </div>
 
-          <div>
+        {/* <div>
             <Route path="/updaterecipe">
               <UpdateRecipe />
             </Route>
           </div>     */}
-    
       </>
     </div>
   );
